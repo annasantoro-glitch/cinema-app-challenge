@@ -1,4 +1,4 @@
-# 🧪 Guia de Testes Manuais
+# Guia de Testes Manuais
 
 Este diretório contém todos os recursos de testes manuais para o projeto Cinema App.
 
@@ -118,7 +118,7 @@ Cinema API Tests
 ### Passos de Execução:
 1. Importar coleção Postman do diretório atual
 2. Configurar variáveis de ambiente
-3. Seguir cenários de teste em `../docs/test-scenarios.md`
+3. Seguir cenários de teste em `../docs/test-cases.md`
 4. Executar testes conforme níveis de prioridade
 
 ## Tags de Teste
@@ -150,15 +150,12 @@ Cinema API Tests
 - Reportar bugs com passos detalhados de reprodução
 - Manter rastreabilidade aos requisitos
 
-## Idiomas Disponíveis
-
-- **English**: [test-scenarios.md](../docs/test-scenarios.md)
-- **Português**: [cenarios-teste-pt-br.md](../docs/cenarios-teste-pt-br.md)
-
 ## Documentação Relacionada
 
-- [Cenários de Teste](../docs/test-scenarios.md) - Casos de teste detalhados (inglês)
-- [Cenários de Teste](../docs/cenarios-teste-pt-br.md) - Casos de teste detalhados (português)
+- [Casos de Teste](../docs/test-cases.md) - Cenários de teste detalhados
+- [Plano de Testes Backend](../docs/test-plan-backend.md) - Estratégia e cobertura
+- [Relatório de Testes](../docs/relatório-de-testes.md) - Resultados da execução
+- [User Stories](../docs/user-stories/) - Requisitos e critérios de aceitação
 - [Documentação](../docs/) - Toda documentação do projeto
 - [README Principal](../README.md) - Visão geral do projeto
 - [Testes Automatizados](../automated-tests/) - Testes Robot Framework
