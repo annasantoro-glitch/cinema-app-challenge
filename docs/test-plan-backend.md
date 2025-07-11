@@ -8,10 +8,12 @@
 - [Ambiente de Testes](#ambiente-de-testes)
 - [Análise Inicial](#análise-inicial)
 - [Técnicas Aplicadas](#técnicas-aplicadas)
-- [Cenários de Teste (Backend)](#cenários-de-teste-backend)
-- [Matriz de Risco](#matriz-de-risco)
+- [Cenários de Teste Manuais (Backend)](#cenários-de-teste-manuais-backend)
 - [Matriz de Rastreabilidade](#matriz-de-rastreabilidade)
 - [Visão de Cobertura](#visão-de-cobertura)
+- [Plano de Ação Para Automação](#plano-de-ação-para-automação)
+- [Planejamento de Automação (Não Implementado)](#planejamento-de-automação-não-implementado)
+- [Documentação Relacionada](#documentação-relacionada)
 
 ---
 
@@ -23,7 +25,7 @@ Este plano tem como objetivo organizar e guiar as atividades de garantia de qual
 **Data de criação:** 23 de Junho de 2025  
 **Última atualização:** 05 de Julho de 2025  
 **Sprint:** 8 - Challenge Final  
-**Ferramentas:** Postman, XMind, Confluence, Jira, Robot Framework, GitHub, MongoDB, Microsoft Excel e Notion
+**Ferramentas:** Postman, XMind, Confluence, Jira, Robot Framework, GitHub, MongoDB e Notion
 
 ---
 
@@ -292,7 +294,7 @@ Validar o comportamento funcional da API Cinema conforme os critérios definidos
 - **Híbrido**: 10 AC (17%)
 - **Cobertura de Testes**: 36 CT + Testes Exploratórios
 
-**Observação**: Requisitos de UI foram testados exploratoriamente. Um planejamento específico de testes exploratórios para frontend será adicionado, detalhando a execução prevista.
+**Observação**: Requisitos de UI foram testados exploratoriamente e os resultados estão documentados no Relatório de Execução de Testes.
 
 ---
 
@@ -303,7 +305,7 @@ Validar o comportamento funcional da API Cinema conforme os critérios definidos
 - **Critérios cobertos por cenários de teste**: 27 (17 Backend + 10 Híbrido)
 - **Cobertura**: 45.8%
 
-**Observação**: Os critérios não cobertos estão concentrados nas user stories de **US-HOME-001**, **US-MOVIE-002**, **US-RESERVE-001/002/003** e **US-NAV-001**, que dependem de fluxos compostos ou testes integrados UI+API.
+**Observação**: Os critérios não cobertos por testes automatizados estão concentrados nas user stories de **US-HOME-001**, **US-MOVIE-002**, **US-RESERVE-001/002/003** e **US-NAV-001**, que dependem de fluxos compostos ou testes integrados UI+API. Estes foram validados através de testes exploratórios manuais.
 
 ### Path Coverage:
 - **Total de fluxos identificados**: 36
@@ -322,7 +324,7 @@ Validar o comportamento funcional da API Cinema conforme os critérios definidos
 - **Itens de UI com testes**: 38 (Testes Exploratórios)
 - **Cobertura**: 90.5%
 
-**Observação**: As principais telas (login, dashboard, cadastro de reserva) estão cobertas por testes exploratórios. Os 4 itens pendentes são componentes reativos (ex: modais de erro e tooltips), priorizados para testes manuais visuais.
+**Observação**: As principais telas (login, dashboard, cadastro de reserva) foram cobertas por testes exploratórios executados. Os 4 itens pendentes são componentes reativos (ex: modais de erro e tooltips), que foram priorizados para validação manual visual.
 
 ### Tabela Comparativa de Cobertura:
 
@@ -439,14 +441,15 @@ automated-tests/
 └── results/
 ```
 
-**Observação**: Esta estrutura foi planejada seguindo boas práticas de automação com separação de responsabilidades (Page Objects, Services, Resources). Devido à instabilidade da API identificada durante os testes manuais e curto tempo de execução de testes, optou-se por focar nos testes exploratórios e documentação dos bugs encontrados, conforme descrito no Relatório de Testes.
+**Observação**: Esta estrutura foi planejada seguindo boas práticas de automação com separação de responsabilidades (Page Objects, Services, Resources). Devido à instabilidade da API identificada durante os testes manuais, optou-se por focar nos testes exploratórios e documentação dos problemas encontrados, conforme descrito no [Relatório de Execução](./test-execution-report.md).
 
 ---
 
 ## Documentação Relacionada
 
 - [User Stories](./user-stories/) - Requisitos e critérios de aceitação
-- [Cenários de Teste](./test-scenarios.md) - Casos de teste detalhados
-- [Critérios de Aceitação](./user-stories/criterios-aceitacao-consolidados.md) - AC consolidados
+- [Casos de Teste](./test-cases.md) - Casos de teste detalhados
+- [Relatório de Execução](./test-execution-report.md) - Resultados da execução dos testes
+- [Roadmap de Inovações](./innovation-roadmap.md) - Propostas de melhoria
 - [Guia de Testes Manuais](../manual-tests/) - Diretrizes de execução
-- [Relatório de Testes]
+- [Testes Automatizados](../automated-tests/) - Implementação Robot Framework
