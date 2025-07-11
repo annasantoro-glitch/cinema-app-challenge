@@ -39,12 +39,12 @@ Este repositório contém a implementação completa de testes (manuais e automa
 - [Documentação e Planejamento](#documentação-e-planejamento)
 - [Resultados e Relatórios](#resultados-e-relatórios)
 - [Cobertura de Testes](#cobertura-de-testes)
-- [Versão em Inglês](#english-version)
+- [Status do Projeto](#status-do-projeto)
 - [Colaboração](#colaboração)
 - [Créditos](#créditos)
 - [Referências Externas](#referências-externas)
 - [Sobre Mim](#sobre-mim)
-- [Status do Projeto](#status-do-projeto)
+- [Versão em Inglês](#english-version)
 
 ---
 
