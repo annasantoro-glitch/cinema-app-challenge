@@ -154,7 +154,7 @@ Cinema API Tests
 
 - [Casos de Teste](../docs/test-cases.md) - Cenários de teste detalhados
 - [Plano de Testes Backend](../docs/test-plan-backend.md) - Estratégia e cobertura
-- [Relatório de Testes](../docs/relatório-de-testes.md) - Resultados da execução
+- [Relatório de Testes](../docs/test-execution-report.md) - Resultados da execução
 - [User Stories](../docs/user-stories/) - Requisitos e critérios de aceitação
 - [Documentação](../docs/) - Toda documentação do projeto
 - [README Principal](../README.md) - Visão geral do projeto
