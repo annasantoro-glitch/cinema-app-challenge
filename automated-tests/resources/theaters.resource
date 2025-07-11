@@ -1,8 +1,8 @@
 *** Settings ***
 Documentation      API Keywords for Theater Management
-Resource           ../variables/api_variables.resource
-Resource           ../variables/base.resource
-Resource          ../resources/auth.resource
+Resource           ../resources/variables/variables.resource
+Resource           ../resources/variables/base.resource
+Resource           ../resources/auth.resource
 
 *** Keywords ***
 Create Theater
@@ -17,19 +17,20 @@ List all theaters
 
 List theater by ID
     [Arguments]    ${theater_id}
-    ${response}=    GET    ${THEATERS_ID_ENDPOINT}
+    ${url}=    Replace String    ${THEATERS_ID_ENDPOINT}    {id}    ${theater_id}
+    ${response}=    GET    ${url}
     RETURN    ${response}
 
 Update theater
     [Arguments]    ${token}    ${theater_id}    ${theater_data}
     ${headers}=    Create Dictionary    Authorization=Bearer ${token}
     ${url}=    Replace String    ${THEATERS_ID_ENDPOINT}    {id}    ${theater_id}
-    ${response}=    PUT    ${BASE_API_URL}${url}    json=${theater_data}    headers=${headers}    expected_status=any
+    ${response}=    PUT    ${url}    json=${theater_data}    headers=${headers}    expected_status=any
     RETURN    ${response}
 
 Delete theater
     [Arguments]    ${token}    ${theater_id}
     ${headers}=    Create Dictionary    Authorization=Bearer ${token}
     ${url}=    Replace String    ${THEATERS_ID_ENDPOINT}    {id}    ${theater_id}
-    ${response}=    DELETE    ${BASE_API_URL}${url}    headers=${headers}    expected_status=any
+    ${response}=    DELETE    ${url}    headers=${headers}    expected_status=any
     RETURN    ${response}

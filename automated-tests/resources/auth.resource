@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation      API Keywords for User Authentication
-Resource           ../variables/avariables.resource
-Resource           ../variables/base.resource
+Resource           ../resources/variables/variables.resource
+Resource           ../resources/variables/base.resource
 
 *** Keywords ***
 

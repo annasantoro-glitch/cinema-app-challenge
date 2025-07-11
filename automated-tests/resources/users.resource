@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation      API Keywords for User Authentication
-Resource           ../variables/variables.resource
-Resource           ../variables/base.resource
+Resource           ../resources/variables/variables.resource
+Resource           ../resources/variables/base.resource
 
 *** Keywords ***
 Create User
@@ -18,11 +18,13 @@ Get All Users
 Update User by Admin
     [Arguments]    ${token}    ${id_usuario}    ${user_data}
     ${headers}=    Create Dictionary    Authorization=Bearer ${token}
-    ${response}=    PUT    ${USERS_ID_ENDPOINT}    json=${user_data}    headers=${headers}    expected_status=any
+    ${url}=    Replace String    ${USERS_ID_ENDPOINT}    {id}    ${id_usuario}
+    ${response}=    PUT    ${url}    json=${user_data}    headers=${headers}    expected_status=any
     RETURN    ${response}
 
 Delete User
     [Arguments]    ${token}    ${id_usuario}
     ${headers}=    Create Dictionary    Authorization=Bearer ${token}
-    ${response}=    DELETE    ${USERS_ID_ENDPOINT}    headers=${headers}    expected_status=any
+    ${url}=    Replace String    ${USERS_ID_ENDPOINT}    {id}    ${id_usuario}
+    ${response}=    DELETE    ${url}    headers=${headers}    expected_status=any
     RETURN    ${response}

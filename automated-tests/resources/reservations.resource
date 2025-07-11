@@ -2,8 +2,8 @@
 Documentation      API Keywords for Reservation Management
 Resource           ../variables/variables.resource
 Resource           ../variables/base.resource
-Resource          ../resources/auth.resource
-Resource         ../resources/sessions.resource
+Resource           auth.resource
+Resource           sessions.resource
 
 *** Keywords ***
 Create Reservation
@@ -20,10 +20,11 @@ Create Reservation With Auth
 Get all Reservations
     [Arguments]    ${token}
     ${headers}=    Create Dictionary    Authorization=Bearer ${token}
-    ${response}=    GET    $${RESERVATIONS_ENDPOINT}    headers=${headers}    expected_status=any
+    ${response}=    GET    ${RESERVATIONS_ENDPOINT}    headers=${headers}    expected_status=any
     RETURN    ${response}
 
 Delete Reservation
     [Arguments]    ${reservation_id}
-    ${response}=    DELETE    ${RESERVATIONS_ID_ENDPOINT}
+    ${url}=    Replace String    ${RESERVATIONS_ID_ENDPOINT}    {id}    ${reservation_id}
+    ${response}=    DELETE    ${url}
     RETURN    ${response}
